@@ -1,0 +1,76 @@
+* {box-sizing: border-box;}
+html, body {font-family: "arial, helvetica, sans-serif"; -webkit-font-smoothing: antialiased; font-size: 14px; color: #333;}
+body, ul {margin: 0; padding: 0;}
+ul li {margin: 0; list-style: none;}
+.clearfloat::after {content: ''; display: table; clear: both;}
+
+/* 标题 */
+header {width: 100%; height: 45px; margin-bottom: 3px; text-align: center; line-height: 45px; box-shadow: 0 0 5px #ccc; z-index: 11;}
+
+/* slider */
+.slider-inner {position: relative; width: 100%; overflow: hidden;}
+.slider-inner .slider-list {position: relative; content: ''; display: table; clear: both;}
+.slider-inner .slider-list .slider-item {height: 160px; float: left; font-size: 5em; color: #fff; text-align: center; background-color: greenyellow;}
+.slider-inner .slider-list .clone {width: 900px; height: 160px; float: left; font-size: 5em; color: #fff; text-align: center; background-color: greenyellow;}
+.slider-indicator {position: absolute; bottom: 0; width: 100%; height: 50px;}
+.slider-indicator ul {content: ''; display: table; clear: both; margin: 0 auto; padding: 15px 0; }
+.slider-indicator ul li {list-style: none; width: 20px; height: 20px; float: left; margin: 0 5px; border-radius: 20px; background-color: #fff;}
+
+/* 图文小标题 */
+.head {width: 100%; padding: 10px 15px; vertical-align: middle; border-bottom: 1px solid #eee; background-color: #fff;}
+.head em.icon {display: inline-block; width: 22px; height: 24px; margin-right: 5px; vertical-align: middle; overflow: hidden; background-color: #30b2ec;}
+.head em.arrow-icon {display: inline-block; width: 22px; height: 24px; margin-left: 10px; vertical-align: middle; overflow: hidden; background-color: #30b2ec;}
+.head em.icon img, .head em.arrow-icon img {width: 100%; height: 100%; vertical-align: middle;}
+.head span {display: inline-block; vertical-align: middle; font-size: 14px; line-height: 24px;}
+.head span.ltxt {font-weight: bold;}
+.head span.rtxt {float: right;}
+.head span p {margin: 5px; line-height: 1; font-size: 1rem; font-weight: normal;}
+.head span p.down {font-size: 1rem; color: #888;}
+
+/* 栅格 */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+}
+/* 通用宫格 */
+.grid {width: 100%; margin: 10px 0;}
+.grid .list {width: 20%; height: inherit; float: left; padding: 6px; background-color: #fff;}
+.grid .list .item {width: 100%; height: inherit; border: 1px solid #eee; overflow: hidden; text-align: center;}
+.grid .list .item a {display: block;}
+.grid .list .item .banner {width: 100%; height: 140px; padding: 0 15px; overflow: hidden; background-color: #30B2EC;}
+.grid .list .item .banner img {width: 100%; height: auto; vertical-align: middle;}
+.grid .list .item h3 {margin: 0.5rem 0; font-size: 12px; font-weight: 500; color: inherit;}
+
+/* 计数器 */
+.counter {width: 128px; height: 36px; margin: 30px 10px;}
+.counter .icon {width: 28%; height: inherit; float: left; font-size: 22px; text-align: center; color: #333; background-color: #e0e0e0; cursor: pointer}
+.counter .input {width: 44%; height: inherit; float: left;}
+.counter .input input {width: 100%; height: inherit; border: 1px solid; border-color: #e0e0e0 transparent; text-align: center; font-size: 14px; line-height: 34px; outline: 0;}
+
+/* 选项卡 */
+.tab ul {}
+.tab ul li {height:55px; float: left; margin: 0 28px; font-size: 14px; line-height: 60px; color: #333; cursor: pointer;}
+.tab ul li em.icon {display: inline-block; width: 20px; height: 20px; margin-right: 8px; vertical-align: middle; overflow: hidden; background-color: #30b2ec;}
+.tab ul li em.icon img {width: 100%; height: auto; vertical-align: middle;}
+.tab ul li span {font-size: 14px; line-height: 20px; vertical-align: middle; color: #666;}
+.tab ul li.on {border-bottom: 3px solid #30b2ec;}
+
+.container {width: 900px; margin: 0 auto;}
+@media screen and (max-width: 768px) {
+	html {font-size: 14px;}
+	.container {width: 100%;}
+	.slider-inner .slider-list .clone {width: 375px;}
+}

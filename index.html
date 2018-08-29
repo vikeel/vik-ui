@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>pts</title>
+	<link rel="stylesheet" type="text/css" href="css/vui.css"/>
+	<style type="text/css">
+		section {margin: 50px 0;}
+		/* .container {width: 900px; margin: 0 auto;} */
+		header a {display: inline-block; height: 100%; padding: 0 10px; background-color: #fff;}
+		header a.vik-back {float: left;}
+		header a.vik-menu {float: right;}
+		header h1.title {display: inline-block; width: auto; margin: 0; padding: 0 10px; overflow: hidden; font-size: 16px; font-weight: 500;}
+		header h1.left {float: left;}
+		.alert {position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5);}
+		.menu {position: absolute; top: 0; right: 0; bottom: 0; left: 40%; background-color: #fff; border-left: 1px solid #666;}
+		.menu .close {position: absolute; width: 24px; height: 24px; background-color: #fff;}
+		
+		.block {width: 24px; height: 24px; float: left; margin: 0 10px; background-color: #ddd;}
+	</style>
+  </head>
+  <body>
+		<header class="header">
+			<a class="vik-back">返回</a>
+			<h1 class="title">标题</h1>
+			<a class="vik-menu">菜单</a>
+		</header>
+		<div class="container">
+			<div class="slider-inner">
+				<a href="./translate.html">
+					
+					<div class="slider-list">
+						<div class="clone" style="background: chocolate;">3</div>
+						<div class="slider-item" style="background: #333;">1</div>
+						<div class="slider-item" style="background: forestgreen;">2</div>
+						<div class="slider-item " style="background: chocolate;">3</div>
+					</div>
+					<div class="slider-indicator"></div>
+				</a>
+			</div>
+		<section>
+			<h3>1. 图文标题</h3>
+			<div class="head">
+				<em class="icon"></em>
+				<span class="ltxt">左侧文字</span>
+				<span class="rtxt"><span class="ltxt">右侧文字</span><em class="arrow-icon"></em></span>
+			</div>
+			<div class="head">
+				<em class="icon"></em>
+				<span class="ltxt">
+					<p>左侧文字</p>
+					<p class="down">zuojlfajsak</p>
+				</span>
+			</div>
+		</section>
+		<section>
+			<h3>2. 计数器</h3>
+			<div class="counter clearfloat">
+				<div class="icon decrease">-</div><div class="input"><input type="text" name="counter" id="counter" value="1"></div><div class="icon increase">+</div>
+			</div>
+		</section>
+		<div class="more" style="position: absolute; width: 120px; height: 160px; background: linear-gradient(to left #07a33e #fff); ">MORE+</div>
+		<section>
+			<h3>3. 选项卡</h3>
+			<div class="tab">
+				<ul id="navTab" class="clearfloat">
+					<li data-indx="1" class="on"><em class="icon"></em><span>帖子</span></li>
+					<li data-indx="2"><em class="icon"></em><span>短视频</span></li>
+					<li data-indx="3"><em class="icon"></em><span>搭配</span></li>
+				</ul>
+			</div>
+		</section>
+		<section>
+			<h3>4. 宫格</h3>
+			<div class="grid clearfloat">
+				<div class="list">
+					<div class="item">
+						<div class="banner">1</div>
+						<h3>标题</h3>
+					</div>
+				</div>
+				<div class="list">
+					<div class="item">
+						<div class="banner">2</div>
+						<h3>标题</h3>
+					</div>
+				</div>
+				<div class="list">
+					<div class="item">
+						<div class="banner">3</div>
+						<h3>标题</h3>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h3>5. SVG</h3>
+			<div class="block">
+				<svg viewBox="0,0,24,24" fill="transparent">
+					<path d="M0 0 L 12 10 L 24 0" stroke="#555"></path>
+				</svg>
+			</div>
+			<div class="block">
+				<svg viewBox="0,0,24,24" fill="transparent">
+					<path d="M2 0 L 16 12 L 0 22" stroke="#555"></path>
+				</svg>
+			</div>
+			<div class="block" style="border-radius: 100%;background-color: #30B2EC;">
+				<svg viewBox="0,0,24,24" fill="transparent">
+					<path d="M6 10 L 11 16 L 18 8" stroke="#fff" stroke-width="2px"></path>
+				</svg>
+			</div>
+			<div class="block" style="border-radius: 100%;background-color: #30B2EC;">
+				<svg viewBox="0,0,24,24">
+					<path d="M6.5 6 L 17.5 17.5 M17.5 5.5 L 6.5 17.5" stroke="#fff" stroke-width="2px"></path>
+				</svg>
+			</div>
+			<div class="block" style="border-radius: 100%;background-color: #30B2EC;">
+				<svg viewBox="0,0,24,24">
+					<path d="M4 12 H20 M12 4 V20" stroke="#fff" stroke-width="2px"></path>
+				</svg>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript" src="js/vui.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			vui(window);
+			v.counter();
+			v.tab();
+			v.carsousel();
+			
+			window.document.addEventListener('touchmove', function(e) {
+				for(var i=0; i<e.changedTouches.length; i++) {
+					console.log(e.changedTouches[i].identifier);
+				}
+			}, false);
+			
+			if(window.Worker) {
+				console.log('zhichi')
+			}else {
+				console.log('buzhichi')
+			}
+			
+			var params = {"a":"1"};
+			function a() {
+				console.log(this);
+			}
+			a.apply(params);
+			// a();
+		}
+		
+	</script>
+  </body>
+</html>
+
